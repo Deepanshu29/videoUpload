@@ -35,11 +35,16 @@ import { PageNotFoundComponent } from './view/page-not-found/page-not-found.comp
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AuthService,VideoService,RouteGuardGuard,{
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenService,
-    multi: true
-  }],
+  providers: [
+    AuthService,
+    VideoService,
+    RouteGuardGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
