@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-secondary">
+    <div class="navbar-brand p-2">Video Player</div>
+    <button type="button" class="btn btn-danger navbar-toggler" data-toggle="collapse" data-target="#MyColl">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="MyColl">
+        <div class="nav navbar-nav">
+            <div class="nav-item"><a class="nav-link" routerLink="home" routerLinkActive="active"><i class="fas fa-home"></i> Home</a></div>
+            <div class="nav-item"><a class="nav-link" routerLink="add-video" routerLinkActive="active"><i class="fas fa-plus"></i> Add Video</a></div>
+        </div>
+        <div class="nav navbar-nav ml-auto">
+            <div class="nav-item"><a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="login" routerLinkActive="active"><i class="fas fa-sign-in-alt"></i> Login</a></div>
+            <div class="nav-item"><a class="nav-link" *ngIf="!auth.loggedIn()" routerLink="register" routerLinkActive="active"><i class="fas fa-user-alt"></i> Register</a></div>
+            <div class="nav-item"><a class="nav-link" *ngIf="auth.loggedIn()" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></div>
+        </div>
+    </div>
+</nav>

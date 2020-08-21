@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card mt-5">
+                <div class="card-header text-center bg-success text-white"><h1>LOGIN</h1></div>
+                <div class="card-body">
+                    <form class="form-group" #login="ngForm" [formGroup]="loginForm">
+                        <div class="mt-3">
+                            <label for="email">Email Address</label>
+                            <input type="email" [class.is-invalid]="loginForm.get('email').invalid && loginForm.get('email').touched" class="form-control" required formControlName="email" id="email" name="email">
+                            <div *ngIf="loginForm.get('email').valid || loginForm.get('email').touched">
+                                <small class="text-danger" *ngIf="loginForm.get('email').errors?.required">Email Required</small>
+                                <small class="text-danger" *ngIf="loginForm.get('email').errors?.email">Must be of Type Email</small>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" [class.is-invalid]="loginForm.get('password').invalid && loginForm.get('password').touched" required formControlName="password" id="password" name="password">
+                            <div *ngIf="loginForm.get('password').valid || loginForm.get('password').touched">
+                                <small class="text-danger" *ngIf="loginForm.get('password').errors?.required">Password Required</small>
+                                <small class="text-danger" *ngIf="loginForm.get('password').errors?.minlength">Must be of atleast 7 characters</small>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3 text-center">
+                            <button (click)="onSubmit()" type="submit" [class.disabled]="login.form.invalid" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

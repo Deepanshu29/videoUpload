@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mb-5">
+            <div class="card">
+            <div class="card-header bg-danger text-white text-center p-4"><h1>Add Video</h1></div>
+            <div class="card-body">
+                <form class="form-group" [formGroup]="videoForm" enctype="multipart/form-data">
+                    <div class="mt-3"> 
+                        <label for="title">Video Title</label>
+                        <input type="text" name="title" formControlName="title" required class="form-control" id="title">
+                    </div>
+                    <div class="mt-3">
+                        <label for="desc">Video Description</label>
+                        <input type="text" name="desc" formControlName="desc" required class="form-control" id="desc">
+                    </div>
+                    <div class="mt-3">
+                        <label for="owner">Made By</label>
+                        <input type="text" name="owner" formControlName="owner" required class="form-control" id="owner">
+                    </div>
+                    <div class="mt-3 text-center">
+                        <label for="video">Upload your Video : &nbsp;</label>
+                        <input type="file" name="video" (change)="selectedVideo($event)" required id="video"/>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <button class="btn btn-danger" (click)="onSubmit()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
