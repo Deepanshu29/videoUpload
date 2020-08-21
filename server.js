@@ -15,10 +15,6 @@ app.use(express.static(path.join(__dirname,'dist/videoUploader')))
 app.use('/api',videoApi);
 app.use('/api',userApi);
 
-app.get('/',(req,res)=>{
-    res.send('Hello')
-})
-
 app.listen(port, ()=>{
     console.log(`http://localhost:${port}`);
 })
