@@ -10,7 +10,7 @@ const userApi = require('./Node(Model&Routes)/Routes/user');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cors());
-app.use(express.static(path.join(__dirname,'dist/videoUploader')))
+app.use(express.static(path.join(__dirname,'/dist/videoUploader')))
 
 app.use('/api',videoApi);
 app.use('/api',userApi);
